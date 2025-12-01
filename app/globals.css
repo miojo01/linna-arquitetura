@@ -1,26 +1,50 @@
 @import "tailwindcss";
 
+@theme {
+  /* --- Suas Cores Personalizadas --- */
+  --color-off-white: #F2F2F2 ;
+  --color-areia-suave: #D5D1C8 ;
+  --color-terracota: #B08775 ;
+  --color-ambar: #C85238 ;
+  --color-black-arch: #0C0C0C;
+  --color-cinza-escuro: #1a1a1a;
+  --color-cinza-medio: #222222;
+  --color-cinza-claro: #333333;
+
+  /* --- Configuração da Fonte --- */
+  /* Isso conecta com o arquivo layout.tsx que vamos editar depois */
+  --font-sans: var(--font-montserrat), ui-sans-serif, system-ui, sans-serif;
+}
+
+/* --- Estilos Globais --- */
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  --background: #0C0C0C;
+  --foreground: #F2F2F2;
 }
 
 body {
-  background: var(--background);
+  background-color: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  /* Adicione esta linha para deixar a fonte igual ao navegador padrão: */
+  -webkit-font-smoothing: subpixel-antialiased; 
+}
+
+/* Rolagem Suave */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Barra de rolagem estilizada */
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  background: #1a1a1a;
+}
+::-webkit-scrollbar-thumb {
+  background: #333;
+  border-radius: 5px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #D5D1C8;
 }
