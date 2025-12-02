@@ -48,3 +48,45 @@ html {
 ::-webkit-scrollbar-thumb:hover {
   background: #D5D1C8;
 }
+
+/* ... seu código anterior ... */
+
+/* ========================================= */
+/* ANIMAÇÃO CARROSSEL INFINITO (CSS PURO)    */
+/* ========================================= */
+@keyframes scrollInfinito {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    /* Move 50% para a esquerda (porque duplicamos a lista) */
+    transform: translateX(-50%);
+  }
+}
+
+/* Utilitário para pausar a animação */
+.pause-hover:hover {
+  animation-play-state: paused;
+}
+
+/* Esconde o indicador de dev do Next.js */
+[data-nextjs-toast] {
+  display: none !important;
+}
+
+/* ======================================= */
+/* ====   REMOVE O ÍCONE 'N' DO NEXT   ==== */
+/* ======================================= */
+
+/* Esconde o container do indicador de build */
+[data-nextjs-toast],
+[data-nextjs-toast-errors-parent],
+div[class*="nextjs-toast"],
+div[class*="build-activity"],
+nextjs-portal {
+    display: none !important;
+    opacity: 0 !important;
+    visibility: hidden !important;
+    pointer-events: none !important;
+    z-index: -9999 !important;
+}

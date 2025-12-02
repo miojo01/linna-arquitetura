@@ -2,7 +2,13 @@ import Header from "./components/Header";
 import Hero from "./components/Hero";
 import Services from "./components/Services";
 import Portfolio from "./components/Portfolio";
-import Method from "./components/Method"; // <-- Importe aqui
+import Method from "./components/Method";
+import Team from "./components/Team";
+import SocialProof from "./components/SocialProof";
+import Location from "./components/Location";
+import Contact from "./components/Contact"; // Novo
+import Footer from "./components/Footer";   // Novo
+import FloatingWhatsapp from "./components/FloatingWhatsapp"; // Novo
 
 export default function Home() {
   return (
@@ -11,9 +17,13 @@ export default function Home() {
       <Hero />
       <Services />
       <Portfolio />
-      <Method /> {/* <-- Adicione aqui */}
-      
-      <div className="h-40 bg-black-arch"></div>
+      <Method />
+      <Team />
+      <SocialProof />
+      <Location />
+      <Contact />
+      <Footer />
+      <FloatingWhatsapp />
     </main>
   );
 }
