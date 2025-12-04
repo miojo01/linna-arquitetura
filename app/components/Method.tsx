@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion } from "framer-motion";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 
 const steps = [
@@ -17,35 +17,26 @@ const steps = [
 
 export default function Method() {
   const [currIndex, setCurrIndex] = useState(0);
-  
-  // Configuração 3D
   const numItems = steps.length;
   const anglePerItem = 360 / numItems; 
   const radius = 400; 
 
-  const nextSlide = () => {
-    setCurrIndex((prev) => (prev + 1));
-  };
-  const prevSlide = () => {
-    setCurrIndex((prev) => (prev - 1));
-  };
-
-  // Função para garantir que o índice do mobile (2D) fique entre 0 e 7
-  const getMobileIndex = (idx: number) => {
-    // Matemática para transformar índices negativos ou gigantes em 0..7
-    return ((idx % numItems) + numItems) % numItems;
-  };
-
+  const nextSlide = () => setCurrIndex((prev) => prev + 1);
+  const prevSlide = () => setCurrIndex((prev) => prev - 1);
+  const getMobileIndex = (idx: number) => ((idx % numItems) + numItems) % numItems;
   const mobileStep = steps[getMobileIndex(currIndex)];
 
   return (
-    // Reduzi o padding vertical no mobile (py-12) e mantive grande no desktop (md:py-20)
-    <section id="metodo" className="bg-cinza-escuro py-12 md:py-20 px-6 overflow-hidden">
-      
-      {/* Altura ajustada: h-auto no mobile, h-[700px] no desktop */}
+    <motion.section 
+      id="metodo" 
+      className="bg-cinza-escuro py-12 md:py-20 px-6 overflow-hidden"
+      initial={{ opacity: 0, y: 50 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true }} // <--- CORRIGIDO
+      transition={{ duration: 0.8 }}
+    >
       <div className="container mx-auto text-center h-auto md:h-[700px] flex flex-col justify-between">
         
-        {/* TÍTULO */}
         <div className="mb-8 md:mb-4 relative z-10 flex justify-center">
             <h3 className="text-2xl md:text-[2.5em] font-bold text-off-white flex items-center gap-4">
                 Nosso Método
@@ -53,7 +44,7 @@ export default function Method() {
             </h3>
         </div>
 
-        {/* === VERSÃO DESKTOP (3D CAROUSEL) === */}
+        {/* DESKTOP */}
         <div className="hidden md:flex relative w-full h-full items-center justify-center perspective-[1200px] mt-10">
           <motion.div
             className="relative w-[280px] h-[350px]"
@@ -73,61 +64,41 @@ export default function Method() {
               return (
                 <div
                   key={index}
-                  className="absolute inset-0 bg-cinza-medio border border-cinza-claro rounded-lg p-8 text-left backface-hidden"
+                  className="absolute inset-0 bg-cinza-medio border border-cinza-claro rounded-lg p-8 text-left backface-hidden transition-opacity duration-500"
                   style={{
                     transform: `rotateY(${angle}deg) translateZ(${radius}px)`,
-                    opacity: opacity,
-                    transition: "opacity 0.5s ease" 
+                    opacity: opacity
                   }}
                 >
                   <span className="block text-4xl font-bold text-areia-suave mb-4">{step.number}</span>
                   <h4 className="text-xl font-semibold text-off-white mb-4">{step.title}</h4>
-                  <p className="text-areia-suave/80 text-sm leading-relaxed">
-                    {step.text}
-                  </p>
+                  <p className="text-areia-suave/80 text-sm leading-relaxed">{step.text}</p>
                 </div>
               );
             })}
           </motion.div>
         </div>
 
-        {/* === VERSÃO MOBILE (CARD 2D SIMPLES) === */}
+        {/* MOBILE */}
         <div className="md:hidden w-full h-[300px] relative flex items-center justify-center">
-            <AnimatePresence mode="wait">
-                <motion.div
-                    key={currIndex} // A chave muda, forçando a re-renderização com animação
-                    initial={{ opacity: 0, x: 20 }}
-                    animate={{ opacity: 1, x: 0 }}
-                    exit={{ opacity: 0, x: -20 }}
-                    transition={{ duration: 0.3 }}
-                    className="bg-cinza-medio border border-cinza-claro rounded-lg p-6 text-left w-full max-w-[320px] shadow-lg"
-                >
-                    <span className="block text-3xl font-bold text-areia-suave mb-3">{mobileStep.number}</span>
-                    <h4 className="text-lg font-semibold text-off-white mb-3">{mobileStep.title}</h4>
-                    <p className="text-areia-suave/80 text-sm leading-relaxed">
-                        {mobileStep.text}
-                    </p>
-                </motion.div>
-            </AnimatePresence>
+            <div className="bg-cinza-medio border border-cinza-claro rounded-lg p-6 text-left w-full max-w-[320px] shadow-lg">
+                <span className="block text-3xl font-bold text-areia-suave mb-3">{mobileStep.number}</span>
+                <h4 className="text-lg font-semibold text-off-white mb-3">{mobileStep.title}</h4>
+                <p className="text-areia-suave/80 text-sm leading-relaxed">{mobileStep.text}</p>
+            </div>
         </div>
 
-        {/* CONTROLES (COMPARTILHADOS) */}
+        {/* CONTROLES */}
         <div className="flex justify-center gap-6 mt-8 md:mt-10 z-20">
-          <button 
-            onClick={prevSlide}
-            className="w-12 h-12 md:w-14 md:h-14 rounded-full border-2 border-areia-suave text-areia-suave flex items-center justify-center hover:bg-areia-suave hover:text-black-arch transition-all duration-300 hover:scale-110 active:scale-95"
-          >
+          <button onClick={prevSlide} className="w-12 h-12 md:w-14 md:h-14 rounded-full border-2 border-areia-suave text-areia-suave flex items-center justify-center hover:bg-areia-suave hover:text-black-arch transition-all duration-300 hover:scale-110 active:scale-95">
             <ChevronLeft size={24} />
           </button>
-          <button 
-            onClick={nextSlide}
-            className="w-12 h-12 md:w-14 md:h-14 rounded-full border-2 border-areia-suave text-areia-suave flex items-center justify-center hover:bg-areia-suave hover:text-black-arch transition-all duration-300 hover:scale-110 active:scale-95"
-          >
+          <button onClick={nextSlide} className="w-12 h-12 md:w-14 md:h-14 rounded-full border-2 border-areia-suave text-areia-suave flex items-center justify-center hover:bg-areia-suave hover:text-black-arch transition-all duration-300 hover:scale-110 active:scale-95">
             <ChevronRight size={24} />
           </button>
         </div>
 
       </div>
-    </section>
+    </motion.section>
   );
 }

@@ -1,36 +1,67 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 🏛️ Linna Arquitetura - Website
 
-## Getting Started
+> "Espaços que inspiram pessoas."
 
-First, run the development server:
+Este projeto é a versão moderna e de alta performance do site institucional da **Linna Arquitetura**, migrado de um site estático para uma aplicação web completa utilizando a stack mais atual do mercado.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## 🚀 Tecnologias (The Modern Stack)
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+O projeto foi desenvolvido focando em performance, escalabilidade e animações fluidas.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+* **Core:** [Next.js 15+](https://nextjs.org/) (App Router) & [React](https://react.dev/)
+* **Linguagem:** [TypeScript](https://www.typescriptlang.org/) (Segurança e tipagem estática)
+* **Estilização:** [Tailwind CSS v4](https://tailwindcss.com/) (Design System utilitário e responsivo)
+* **Animações:** [Framer Motion](https://www.framer.com/motion/) (Interações complexas, 3D e física)
+* **Ícones:** [Lucide React](https://lucide.dev/)
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## ✨ Funcionalidades e Destaques
 
-## Learn More
+* **Hero Cinematográfico:** Efeito Ken Burns (Zoom suave) e textos com revelação sequencial.
+* **Carrossel 3D (Seção Método):** Um carrossel giratório com física realista para apresentar o processo de trabalho.
+* **Efeito Tilt 3D (Quem Somos):** Fotos da equipe que reagem ao movimento do mouse com inclinação e reflexo dinâmico.
+* **Drag-to-Scroll (Equipe):** Interface tátil para navegar pelos membros da equipe clicando e arrastando.
+* **Marquee Infinito (Parceiros):** Faixa de logos com rolagem contínua e efeito de fade nas bordas.
+* **Portfólio Interativo:** Cards com mini-galeria interna que permite navegar pelas fotos sem sair da página.
+* **Performance:** Imagens otimizadas automaticamente pelo Next.js e carregamento inteligente de fontes (Montserrat).
 
-To learn more about Next.js, take a look at the following resources:
+## 🛠️ Como Rodar o Projeto
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Siga os passos abaixo para rodar o projeto em sua máquina local.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+### Pré-requisitos
 
-## Deploy on Vercel
+* Node.js instalado (Versão 18 ou superior recomendada).
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+### Instalação
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+1.  **Clone o repositório:**
+    ```bash
+    git clone [https://github.com/miojo01/linna-arquitetura](https://github.com/miojo01/linna-arquitetura)
+    cd linna-arquitetura
+    ```
+
+2.  **Instale as dependências:**
+    ```bash
+    npm install
+    ```
+
+3.  **Rode o servidor de desenvolvimento:**
+    ```bash
+    npm run dev
+    ```
+
+4.  Abra [http://localhost:3000](http://localhost:3000) no seu navegador.
+
+## 📂 Estrutura do Projeto
+
+* **`app/`**: Contém as páginas (`page.tsx`) e o layout global.
+    * **`components/`**: Componentes reutilizáveis (Header, Hero, Services, etc.).
+* **`public/assets/`**: Onde ficam todas as imagens (`img/`) e vídeos estáticos.
+* **`app/globals.css`**: Configurações globais de estilo e variáveis de tema.
+
+## 🎨 Personalização
+
+* **Imagens:** Substitua os arquivos na pasta `public/assets/img` mantendo os mesmos nomes ou atualize os caminhos nos componentes (ex: `app/components/Team.tsx`).
+* **Cores:** As cores da marca (`black-arch`, `areia-suave`, etc.) estão configuradas como variáveis CSS no arquivo `app/globals.css`.
+
+---

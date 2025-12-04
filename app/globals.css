@@ -1,84 +1,104 @@
 @import "tailwindcss";
 
 @theme {
-  /* --- Suas Cores Personalizadas --- */
-  --color-off-white: #F2F2F2 ;
-  --color-areia-suave: #D5D1C8 ;
-  --color-terracota: #B08775 ;
-  --color-ambar: #C85238 ;
-  --color-black-arch: #0C0C0C;
-  --color-cinza-escuro: #1a1a1a;
-  --color-cinza-medio: #222222;
-  --color-cinza-claro: #333333;
+  /* --- MUDANÇA: Agora as cores apontam para variáveis (var) --- */
+  /* Isso permite que elas mudem de valor quando trocamos o tema */
+  --color-off-white: var(--off-white);
+  --color-areia-suave: var(--areia-suave);
+  --color-terracota: var(--terracota);
+  --color-ambar: var(--ambar);
+  --color-black-arch: var(--black-arch);
+  --color-cinza-escuro: var(--cinza-escuro);
+  --color-cinza-medio: var(--cinza-medio);
+  --color-cinza-claro: var(--cinza-claro);
 
-  /* --- Configuração da Fonte --- */
-  /* Isso conecta com o arquivo layout.tsx que vamos editar depois */
+  /* --- Configuração da Fonte (Mantida) --- */
   --font-sans: var(--font-montserrat), ui-sans-serif, system-ui, sans-serif;
 }
 
-/* --- Estilos Globais --- */
+/* --- DEFINIÇÃO DOS TEMAS --- */
+
+/* 1. TEMA ESCURO (Padrão/Original) */
 :root {
   --background: #0C0C0C;
   --foreground: #F2F2F2;
+
+  /* Suas cores originais */
+  --off-white: #F2F2F2;
+  --areia-suave: #D5D1C8;
+  --terracota: #B08775;
+  --ambar: #C85238;
+  --black-arch: #0C0C0C;
+  --cinza-escuro: #1a1a1a;
+  --cinza-medio: #222222;
+  --cinza-claro: #333333;
 }
+
+/* 2. TEMA CLARO (Inversão inteligente) */
+:root[class="light"] {
+  --background: #F2F2F2;
+  --foreground: #0C0C0C;
+
+  /* Cores invertidas para o modo claro */
+  --off-white: #1a1a1a;       /* Texto vira escuro */
+  --areia-suave: #B08775;     /* Acentuação fica mais forte para contraste */
+  --terracota: #D5D1C8;
+  --ambar: #C85238;
+  --black-arch: #FFFFFF;      /* Fundo principal vira branco */
+  --cinza-escuro: #F4F4F5;    /* Seções alternadas viram cinza bem claro */
+  --cinza-medio: #E4E4E7;     /* Cards viram cinza claro */
+  --cinza-claro: #D4D4D8;     /* Bordas um pouco mais visíveis */
+}
+
+/* --- SEUS ESTILOS GLOBAIS (MANTIDOS) --- */
 
 body {
   background-color: var(--background);
   color: var(--foreground);
-  /* Adicione esta linha para deixar a fonte igual ao navegador padrão: */
-  -webkit-font-smoothing: subpixel-antialiased; 
+  -webkit-font-smoothing: subpixel-antialiased; /* Mantido */
+  
+  /* Adicionei transição para o tema trocar suavemente */
+  transition: background-color 0.5s ease, color 0.5s ease;
 }
 
-/* Rolagem Suave */
 html {
-  scroll-behavior: smooth;
+  scroll-behavior: smooth; /* Mantido */
 }
 
-/* Barra de rolagem estilizada */
+/* Barra de rolagem estilizada (Mantida) */
 ::-webkit-scrollbar {
   width: 10px;
 }
 ::-webkit-scrollbar-track {
-  background: #1a1a1a;
+  background: var(--cinza-escuro); /* Atualizado para usar variável */
 }
 ::-webkit-scrollbar-thumb {
-  background: #333;
+  background: var(--cinza-claro);  /* Atualizado para usar variável */
   border-radius: 5px;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: #D5D1C8;
+  background: var(--areia-suave);  /* Atualizado para usar variável */
 }
 
-/* ... seu código anterior ... */
-
 /* ========================================= */
-/* ANIMAÇÃO CARROSSEL INFINITO (CSS PURO)    */
+/* ANIMAÇÃO CARROSSEL INFINITO (MANTIDO)     */
 /* ========================================= */
 @keyframes scrollInfinito {
   from {
     transform: translateX(0);
   }
   to {
-    /* Move 50% para a esquerda (porque duplicamos a lista) */
     transform: translateX(-50%);
   }
 }
 
-/* Utilitário para pausar a animação */
 .pause-hover:hover {
   animation-play-state: paused;
-}
-
-/* Esconde o indicador de dev do Next.js */
-[data-nextjs-toast] {
-  display: none !important;
 }
 
 /* ======================================= */
 /* ====   REMOVE O ÍCONE 'N' DO NEXT   ==== */
 /* ======================================= */
-
-/* Esconde o container do indicador de build */
 [data-nextjs-toast],
 [data-nextjs-toast-errors-parent],
 div[class*="nextjs-toast"],

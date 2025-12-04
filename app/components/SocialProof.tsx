@@ -1,5 +1,6 @@
 "use client";
 
+// Lista de logos (Uma lista simples)
 const logos = [
   "/assets/img/empresas/bandcalcados.png",
   "/assets/img/empresas/cabecagrande.png",
@@ -25,19 +26,20 @@ const logos = [
 
 export default function SocialProof() {
   return (
-    // AJUSTE: Reduzi de py-16 para py-10 (Altura menor)
     <section className="bg-areia-suave py-10 overflow-hidden border-none relative z-10">
       
-      {/* Título com margem reduzida (mb-10 em vez de mb-16) */}
+      {/* Título Estilo Antigo (Centralizado e Simples) */}
       <div className="container mx-auto text-center mb-10">
         <h4 className="text-xl md:text-2xl font-bold text-black-arch relative inline-block pb-3">
           Marcas que confiam em nosso trabalho
+          {/* Linha pequena abaixo */}
           <span className="absolute bottom-0 left-1/2 -translate-x-1/2 w-12 h-[3px] bg-ambar rounded-full"></span>
         </h4>
       </div>
 
-      {/* Carrossel */}
+      {/* Carrossel Infinito Simples */}
       <div className="relative w-full overflow-hidden">
+        {/* Usa a animação CSS puro 'scrollInfinito' definida no globals.css */}
         <div 
             className="flex items-center gap-16 min-w-max pause-hover"
             style={{ animation: "scrollInfinito 60s linear infinite" }}
