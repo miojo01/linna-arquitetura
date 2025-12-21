@@ -5,14 +5,16 @@ import { useEffect } from "react";
 
 export default function Template({ children }: { children: React.ReactNode }) {
   
-  // Efeito para rolar para o topo ao carregar a página (F5)
   useEffect(() => {
-    window.scrollTo(0, 0);
+    // CORREÇÃO: Só rola para o topo se NÃO tiver um # na URL.
+    // Se tiver # (ex: /#servicos), deixa o navegador rolar até a seção correta.
+    if (!window.location.hash) {
+      window.scrollTo(0, 0);
+    }
   }, []);
 
   return (
     <motion.div
-      // Animação de Entrada e Saída da PÁGINA inteira
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       exit={{ opacity: 0, y: 20 }}

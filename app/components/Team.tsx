@@ -5,10 +5,10 @@ import { motion } from "framer-motion";
 
 const team = [
   { name: "Bruna", role: "Arquiteta & Sócia-Fundadora", desc: "Transforma projetos em experiências únicas, buscando equilíbrio entre criatividade e funcionalidade.", image: "/assets/img/pessoas/bruna.jpeg" },
-  { name: "Marielen", role: "Designer & Sócia-Fundadora", desc: "Organiza cada detalhe com perfeição. Fã de gatos e de universos onde a criatividade não tem limites.", image: "/assets/img/pessoas/marielen.jpeg" },
+  { name: "Marielen", role: "Arquiteta & Sócia-Fundadora", desc: "Organiza cada detalhe com perfeição. Fã de gatos e de universos onde a criatividade não tem limites.", image: "/assets/img/pessoas/marielen.jpeg" },
   { name: "Ariane", role: "Arquiteta Criativa", desc: "Transforma ideias em espaços acolhedores.", image: "/assets/img/pessoas/ariane.jpg" },
   { name: "Clarice", role: "Arquiteta Curiosa", desc: "Adora cores e criar sistemas para tornar o trabalho mais eficiente.", image: "/assets/img/pessoas/clarice.jpg" },
-  { name: "Jony", role: "Contador Tributarista", desc: "Dono de uma mente inquieta, seu verdadeiro brilho não está nos palcos, mas nos bastidores.", image: "/assets/img/pessoas/jony.JPG" },
+  { name: "Jony", role: "Consultor Tributário", desc: "Dono de uma mente inquieta, seu verdadeiro brilho não está nos palcos, mas nos bastidores.", image: "/assets/img/pessoas/jony.JPG" },
 ];
 
 export default function Team() {

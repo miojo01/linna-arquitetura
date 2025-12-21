@@ -11,24 +11,40 @@ import { Plus, Minus } from "lucide-react";
 const faqs = [
   {
     question: "Por que escolher a Linna Arquitetura?",
-    answer: "Criamos espaços contemporâneos para marcas autênticas. Se você busca um escritório que prioriza excelência, estratégia e funcionalidade, a Linna é para você. Unimos estética e negócios em jornadas especiais."
+    answer: "Somos o único escritório da região especializado em projetos comerciais, focados em criar ambientes funcionais que valorizam sua marca e priorizam a experiência do cliente. Projetamos espaços únicos para conectar pessoas à essência da sua empresa."
   },
   {
     question: "Vocês fazem somente projetos comerciais?",
-    answer: "Nosso foco principal é a arquitetura comercial e corporativa, mas também realizamos projetos residenciais de alto padrão que busquem essa mesma essência de sofisticação e funcionalidade."
+    answer: "Sim, desenvolvemos projetos para os mais variados estabelecimentos comerciais e corporativos e industriais, de suas recepções, setores de atendimento, áreas individuais e coletivas, criando ambientes funcionais e acolhedores para clientes e equipe."
+  },
+  {
+    question: "Vocês fazem projeto arquitetônico?",
+    answer: "Sim. Trabalhamos com projeto arquitetônico e seus complementares, mas principalmente projetos de interiores e fachadas."
   },
   {
     question: "Em que cidades vocês atendem? Realizam projetos à distância?",
-    answer: "Estamos sediados em Santa Catarina, mas atendemos projetos em todo o Brasil. Nossa metodologia de trabalho permite um acompanhamento remoto eficiente e preciso."
+    answer: "Atendemos Canoinhas e região presencialmente, mas também realizamos projetos à distância, com o mesmo padrão de qualidade e dedicação."
   },
   {
-    question: "Como funciona o processo de atendimento?",
-    answer: "Tudo começa com um briefing profundo. Passamos pela concepção criativa, apresentação visual, detalhamento técnico e acompanhamento da obra. Você participa ativamente de todas as aprovações."
+    question: "Como funciona o trabalho de vocês?",
+    answer: "Nosso processo é dividido em 8 etapas. Você pode conferir todos os detalhes na seção 'Método'."
   },
   {
-    question: "Quanto tempo antes devo entrar em contato?",
-    answer: "O ideal é entrar em contato assim que tiver o imóvel ou terreno em vista. Quanto antes começarmos o planejamento, mais otimizada e econômica será a sua obra."
-  }
+    question: "O que está incluso no valor do projeto?",
+    answer: "No valor do projeto você recebe: • Projeto técnico completo e imagens realistas dos ambientes; • Visitas à obra, em número estipulado no orçamento de acordo com o porte do projeto. Caso seja necessário um acompanhamento mais frequente, é possível contratar visitas adicionais à parte ou acompanhamento de obra; • Entrega impressa do projeto; • Presentes especiais preparados para o cliente; • Auxílio na contratação de profissionais para a execução da obra; • Suporte contínuo para dúvidas de execução, que pode ser feito via WhatsApp ou em reuniões no escritório, garantindo acompanhamento mesmo após as visitas previstas."
+  },
+  {
+    question: "Quais são as formas de pagamento?",
+    answer: "Aceitamos Pix e parcelamento no boleto bancário. Posso pagar metade no início e metade apenas na entrega do projeto? Não conseguimos atrelar o pagamento à entrega, pois o andamento do projeto depende também de aprovações e retornos do cliente, o que pode gerar atrasos fora do nosso controle. Para garantir segurança e transparência, trabalhamos com contrato, prazos definidos e nos comprometemos com a qualidade em todas as etapas."
+  },
+  {
+    question: "Vocês fazem somente a etapa de móveis soltos e decoração?",
+    answer: "Sim. Além do projeto completo de interiores, também oferecemos a consultoria, ideal para quem busca valorizar o ambiente com soluções práticas e de menor custo. Essa modalidade não inclui o desenvolvimento técnico completo (plantas detalhadas e especificações), mas entrega uma solução visual e prática, perfeita para quem deseja atualizar os espaços, melhorar a estética e evitar grandes obras."
+  },
+  {
+    question: "Gostei! Como posso contratar?",
+    answer: "Entre em contato conosco na seção 'Contato' e preencha o formulário. Retornaremos o mais rápido possível para conversarmos sobre o seu projeto!"
+  },
 ];
 
 export default function FAQ() {

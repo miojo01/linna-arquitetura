@@ -6,12 +6,12 @@ import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X } from "lucide-react";
 
 const navItems = [
-  { name: "Manifesto", href: "#hero" },
+  { name: "Manifesto", href: "/#hero" },
   { name: "Quem Somos", href: "/quem-somos" },
-  { name: "Serviços", href: "#servicos" },
-  { name: "Portfólio", href: "#portfolio" },
+  { name: "Serviços", href: "/#servicos" },
+  { name: "Portfólio", href: "/#portfolio" },
   { name: "FAQ", href: "/faq" },
-  { name: "Contato", href: "#contato" },
+  { name: "Contato", href: "/#contato" },
 ];
 
 export default function Header() {
