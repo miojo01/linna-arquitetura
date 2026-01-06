@@ -12,6 +12,11 @@ const montserrat = Montserrat({
 export const metadata: Metadata = {
   title: "Linna Arquitetura",
   description: "Espaços que inspiram pessoas.",
+  icons: {
+    icon: "/favicon.png", // Caminho direto para o arquivo na pasta public
+    shortcut: "/favicon.png",
+    apple: "/favicon.png", // Opcional: ícone para iPhone/iPad
+  },
 };
 
 export default function RootLayout({
